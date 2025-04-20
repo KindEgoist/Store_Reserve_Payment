@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: store-app
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/gb_store?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: bestuser
+    password: bestuser
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# 🔗 URL микросервисов
+reserve:
+  url: http://localhost:8081/reserve
+payment:
+  url: http://localhost:8082/payment
